@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="vi">
-      <body>{children}</body>
+      <body style={{ fontFamily: 'var(--font-geist-sans)' }}>{children}</body>
     </html>
   );
 }
