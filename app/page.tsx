@@ -1,69 +1,22 @@
-import Image from "next/image";
+import portfolio from "../data/portfolio.json";
+import type { PortfolioData } from "../data/portfolio";
+import { projects } from "../data/projects";
+import projectStyles from "./projects.module.css";
+
+const peepReport = "https://loclnx.github.io/LAZTAR-PEEP-2026-LeNguyenXuanLoc/";
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  const { profile, skills, experience, socialLinks } = portfolio as PortfolioData;
+  return <main>
+    <header className="header"><a className="brand" href="#home">LXL<span>.</span></a><nav><a href="#about">Giới thiệu</a><a href="#skills">Kỹ năng</a><a href="#projects">Dự án</a><a href="#experience">Kinh nghiệm</a><a href="#contact">Liên hệ</a><a href={peepReport} target="_blank" rel="noreferrer">PEEP Report ↗</a></nav><a className="button small" href="#projects">Xem dự án ↗</a><details className="mobile-menu"><summary aria-label="Mở menu">☰</summary><div><a href="#about">Giới thiệu</a><a href="#skills">Kỹ năng</a><a href="#projects">Dự án</a><a href="#experience">Kinh nghiệm</a><a href="#contact">Liên hệ</a><a href={peepReport} target="_blank" rel="noreferrer">PEEP Report ↗</a></div></details></header>
+    <section className="hero" id="home"><div className="copy"><p className="eyebrow">{profile.role}</p><h1>Hi, I&apos;m <em>Lê Nguyễn<br />Xuân Lộc.</em></h1><p className="lead">{profile.summary}</p><div className="actions"><a className="button" href="#projects">Xem dự án ↓</a><a className="email" href={`mailto:${profile.email}`}>Liên hệ ↗</a></div><div className="socials">{socialLinks.map((link) => <a href={link.href} key={link.label} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined}>{link.label} ↗</a>)}</div></div><div className="portrait" aria-hidden="true"><div className="orb"></div><div className="portrait-card"><small>BUILDING</small><strong>LXL</strong><small>USEFUL SOFTWARE</small></div><span>SOFTWARE ENGINEERING INTERN</span></div></section>
+    <section className="section" id="about"><Heading index="01" label="ABOUT ME" title="Tạo ra trải nghiệm số rõ ràng và hữu ích."/><div className="about"><p>{profile.about}</p><dl>{[["Học vấn",profile.education],["Tốt nghiệp dự kiến",profile.graduation],["Địa điểm",profile.location],["Định hướng",profile.focus]].map(([name,value])=><div key={name}><dt>{name}</dt><dd>{value}</dd></div>)}</dl></div></section>
+    <section className="section tinted" id="skills"><Heading index="02" label="TECHNICAL TOOLKIT" title="Kỹ năng & công cụ"/><div className="skill-grid">{skills.map((skill,index)=><article className="skill" key={skill.category}><span>0{index+1}</span><h3>{skill.category}</h3><p>{skill.items.join(" · ")}</p></article>)}</div></section>
+    <section className="section" id="projects"><Heading index="03" label="SELECTED WORK" title="Dự án nổi bật"/><div className={projectStyles.projects}>{projects.map((project,index)=><article className={projectStyles.project} key={project.name}><div className={`${projectStyles.visual} visual visual-${index}`}><span>0{index+1}</span><i></i></div><div className={`${projectStyles.body} project-body`}><p className="role">{project.role}</p><h3>{project.name}</h3><p>{project.description}</p><ul>{project.tech.map((item)=><li key={item}>{item}</li>)}</ul><div>{project.links.map((link)=><a key={link.label} href={link.href} target="_blank" rel="noreferrer">{link.label} ↗</a>)}</div></div></article>)}</div></section>
+    <section className="section experience" id="experience"><Heading index="04" label="EXPERIENCE" title="Kinh nghiệm làm việc"/><article><p>{experience.period}</p><div><h3>{experience.role}</h3><b>{experience.company}</b><p>{experience.description}</p></div></article></section>
+    <section className="contact" id="contact"><p className="eyebrow">05 / LET&apos;S CONNECT</p><h2>Cùng tạo nên sản phẩm <em>tiếp theo.</em></h2><p>Mình luôn sẵn sàng trao đổi về sản phẩm, cơ hội hợp tác hoặc một ý tưởng mới.</p><div className="actions"><a className="button" href={`mailto:${profile.email}`}>Gửi email ↗</a><a className="outline" href={profile.github} target="_blank" rel="noreferrer">GitHub ↗</a></div><small><a href={peepReport} target="_blank" rel="noreferrer">Xem báo cáo PEEP ↗</a></small></section>
+    <footer><a className="brand" href="#home">LXL<span>.</span></a><span>© 2026 Lê Nguyễn Xuân Lộc</span><a href="#home">Lên đầu trang ↑</a></footer>
+  </main>;
 }
+
+function Heading({index,label,title}:{index:string;label:string;title:string}) { return <div className="heading"><p className="eyebrow">{index} / {label}</p><h2>{title}</h2></div>; }
