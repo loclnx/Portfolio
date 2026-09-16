@@ -5,7 +5,7 @@ export const projects: Project[] = [
     name: "Phone Accessories System",
     role: "BUSINESS ANALYST / FULL-STACK DEVELOPER · 01/2026 - 03/2026",
     description:
-      "Hệ thống thương mại điện tử web và mobile, cho phép khách hàng tìm kiếm, mua và đánh giá phụ kiện điện thoại; đồng thời hỗ trợ quản trị viên và nhân viên quản lý sản phẩm, đơn hàng, tồn kho, người dùng, chi nhánh và giá. Mình phát triển các luồng duyệt sản phẩm, giỏ hàng, checkout, thanh toán, theo dõi đơn hàng và khu vực quản trị; tích hợp RESTful API, phân quyền theo vai trò, Redux Toolkit, kiểm thử UI và validation form.",
+      "A web and mobile e-commerce system where customers can browse, purchase, and review phone accessories, while administrators and staff manage products, orders, inventory, users, branches, and pricing. I built product browsing, cart, checkout, payment, order-tracking, and admin flows; integrated RESTful APIs and role-based access; and supported Redux Toolkit state management, UI testing, and form validation.",
     tech: ["ReactJS", "TypeScript", "React Native", "MongoDB", "Redux Toolkit", "VNPay Sandbox"],
     links: [
       { label: "Frontend", href: "https://github.com/nganne2203/SDN302_PROJECT_FE" },
@@ -16,7 +16,7 @@ export const projects: Project[] = [
     name: "Hackathon Management System",
     role: "BUSINESS ANALYST / FULL-STACK DEVELOPER · 05/2026 - 07/2026",
     description:
-      "Nền tảng quản lý hackathon cho người tham gia, điều phối viên, giám khảo, mentor và quản trị viên. Mình phát triển giao diện web responsive cùng màn hình React Native đa vai trò, hoàn thiện các luồng quản lý sự kiện, lập đội, nộp bài, chấm điểm, công bố kết quả, workshop, check-in, chat và thông báo; đồng thời tích hợp API, phân quyền UI, Socket.IO và xử lý lỗi giao diện.",
+      "A hackathon management platform for participants, coordinators, judges, mentors, and administrators. I developed responsive web interfaces and multi-role React Native screens for event management, team formation, submissions, judging, scoring, results, workshops, check-in, chat, and notifications; then integrated APIs, UI access control, Socket.IO real-time features, and UI testing fixes.",
     tech: ["React Native", "TypeScript", "NodeJS", "Socket.IO", "Redis", "Docker"],
     links: [
       { label: "Frontend", href: "https://github.com/nganne2203/WDP301_HACKATHON_G04_FE" },
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     name: "Maihongo Japanese Learning App",
     role: "BUSINESS ANALYST / FULL-STACK DEVELOPER · 05/2026 - 07/2026",
     description:
-      "Ứng dụng học tiếng Nhật đa nền tảng với từ vựng, flashcard, quiz, luyện nghe, nói, viết, bookmark, lịch sử học và theo dõi tiến độ - kể cả khi offline. Mình phát triển các luồng Flutter, tích hợp RESTful API qua Dio và Riverpod, xác thực và refresh token, ghi/phát âm thanh, SQLite cùng đồng bộ dữ liệu; đồng thời xây dựng dịch vụ Node.js cho nội dung học, đánh giá nói/viết bằng Gemini và lưu media trên Cloudflare R2.",
+      "A cross-platform Japanese learning app featuring vocabulary, flashcards, quizzes, listening, speaking, writing, bookmarks, learning history, progress tracking, and offline learning. I built the Flutter learning flows, integrated RESTful APIs with Dio and Riverpod, authentication and token refresh, audio recording and playback, SQLite storage, and synchronization; and developed Node.js services for learning content, Gemini-powered speaking and writing evaluation, and Cloudflare R2 media storage.",
     tech: ["Flutter", "Riverpod", "SQLite", "ExpressJS", "Gemini API", "Cloudflare R2"],
     links: [
       { label: "Mobile", href: "https://github.com/nganne2203/PRM393_MaiHonGo_MB" },
