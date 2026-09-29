@@ -5,7 +5,7 @@ const sectionIds = ["about", "skills", "projects", "experience", "contact"];
 type SiteHeaderProps = { copy: LandingCopy; reportUrl: string };
 
 export function SiteHeader({ copy, reportUrl }: SiteHeaderProps) {
-  return <header className="header"><a className="brand" href="#home">LXL<span>.</span></a><Navigation copy={copy} reportUrl={reportUrl} /><a className="button small" href="#projects">{copy.viewProjects} ↗</a><details className="mobile-menu"><summary aria-label={copy.mobileMenuLabel}>☰</summary><div><Navigation copy={copy} reportUrl={reportUrl} /></div></details><LanguageSwitcher label={copy.languageLabel} /></header>;
+  return <header className="header"><a className="brand" href="#home">LXL<span>.</span></a><Navigation copy={copy} reportUrl={reportUrl} /><details className="mobile-menu"><summary aria-label={copy.mobileMenuLabel}>☰</summary><div><Navigation copy={copy} reportUrl={reportUrl} /></div></details><LanguageSwitcher label={copy.languageLabel} /></header>;
 }
 
 function Navigation({ copy, reportUrl }: Pick<SiteHeaderProps, "copy" | "reportUrl">) {
