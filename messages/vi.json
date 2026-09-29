@@ -1,0 +1,14 @@
+{
+  "Metadata": { "title": "Lê Nguyễn Xuân Lộc | Thực tập sinh Kỹ thuật Phần mềm", "description": "Portfolio cá nhân của Lê Nguyễn Xuân Lộc." },
+  "Landing": {
+    "navigation": { "about": "Giới thiệu", "skills": "Kỹ năng", "projects": "Dự án", "experience": "Kinh nghiệm", "contact": "Liên hệ" },
+    "sectionLabels": { "about": "GIỚI THIỆU", "skills": "BỘ CÔNG CỤ KỸ THUẬT", "projects": "DỰ ÁN TIÊU BIỂU", "experience": "KINH NGHIỆM" },
+    "details": { "education": "Học vấn", "graduation": "Tốt nghiệp dự kiến", "location": "Địa điểm", "focus": "Định hướng" },
+    "aboutTitle": "Tạo ra trải nghiệm số rõ ràng và hữu ích.",
+    "skillsTitle": "Kỹ năng & công cụ", "projectsTitle": "Dự án nổi bật", "experienceTitle": "Kinh nghiệm làm việc", "viewProjects": "Xem dự án", "getInTouch": "Liên hệ", "email": "Gửi email", "peep": "Xem báo cáo PEEP", "backToTop": "Lên đầu trang",
+    "contactDescription": "Mình luôn sẵn sàng trao đổi về sản phẩm, cơ hội hợp tác hoặc một ý tưởng mới.",
+    "contactTitle": { "first": "Cùng tạo nên sản phẩm", "emphasis": "tiếp theo." },
+    "heroGreeting": "Xin chào, mình là", "languageLabel": "Chuyển sang tiếng Anh", "reportLabel": "Báo cáo PEEP", "mobileMenuLabel": "Mở menu", "contactLabel": "KẾT NỐI",
+    "portrait": { "building": "XÂY DỰNG", "software": "PHẦN MỀM HỮU ÍCH", "role": "THỰC TẬP SINH KỸ THUẬT PHẦN MỀM" }
+  }
+}

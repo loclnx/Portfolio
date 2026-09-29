@@ -21,6 +21,10 @@ export type LandingCopy = {
   contactTitle: readonly [string, string];
   heroGreeting: string;
   languageLabel: string;
+  reportLabel: string;
+  mobileMenuLabel: string;
+  contactLabel: string;
+  portraitLabels: readonly [string, string, string];
 };
 
 export const peepReportUrl = "https://loclnx.github.io/LAZTAR-PEEP-2026-LeNguyenXuanLoc/";
@@ -32,6 +36,12 @@ export const englishProfile: Profile = {
   about: "I enjoy turning requirements into practical user journeys that are clear for people and maintainable for teams. With a foundation in frontend, mobile, and API integration, I care about both technical detail and the product value it creates.",
   location: "Thu Duc City, Ho Chi Minh City",
 };
+
+const vietnameseProjectRoles = [
+  "BUSINESS ANALYST / LẬP TRÌNH VIÊN FULL-STACK · 01/2026 - 03/2026",
+  "BUSINESS ANALYST / LẬP TRÌNH VIÊN FULL-STACK · 05/2026 - 07/2026",
+  "BUSINESS ANALYST / LẬP TRÌNH VIÊN FULL-STACK · 05/2026 - 07/2026",
+];
 
 export const englishExperience = {
   ...vietnameseExperience,
@@ -47,9 +57,10 @@ const vietnameseProjectDescriptions = [
 export const localizedProjects = (locale: Locale) => projects.map((project, index) => ({
   ...project,
   description: locale === "vi" ? vietnameseProjectDescriptions[index] ?? project.description : project.description,
+  role: locale === "vi" ? vietnameseProjectRoles[index] ?? project.role : project.role,
 }));
 
-export const landingContent: Record<Locale, LandingCopy> = {
-  en: { navigation: ["About", "Skills", "Projects", "Experience", "Contact"], sectionLabels: ["ABOUT ME", "TECHNICAL TOOLKIT", "SELECTED WORK", "EXPERIENCE"], details: ["Education", "Expected graduation", "Location", "Focus"], aboutTitle: "Building clear and useful digital experiences.", skillsTitle: "Skills and tools", projectsTitle: "Featured projects", experienceTitle: "Work experience", viewProjects: "View projects", getInTouch: "Get in touch", email: "Send an email", peep: "View PEEP report", backToTop: "Back to top", contactDescription: "I'm always open to a conversation about products, collaboration opportunities, or a new idea.", contactTitle: ["Let's create the", "next product."], heroGreeting: "Hi, I'm", languageLabel: "Switch to Vietnamese" },
-  vi: { navigation: ["Giới thiệu", "Kỹ năng", "Dự án", "Kinh nghiệm", "Liên hệ"], sectionLabels: ["GIỚI THIỆU", "BỘ CÔNG CỤ KỸ THUẬT", "DỰ ÁN TIÊU BIỂU", "KINH NGHIỆM"], details: ["Học vấn", "Tốt nghiệp dự kiến", "Địa điểm", "Định hướng"], aboutTitle: "Tạo ra trải nghiệm số rõ ràng và hữu ích.", skillsTitle: "Kỹ năng & công cụ", projectsTitle: "Dự án nổi bật", experienceTitle: "Kinh nghiệm làm việc", viewProjects: "Xem dự án", getInTouch: "Liên hệ", email: "Gửi email", peep: "Xem báo cáo PEEP", backToTop: "Lên đầu trang", contactDescription: "Mình luôn sẵn sàng trao đổi về sản phẩm, cơ hội hợp tác hoặc một ý tưởng mới.", contactTitle: ["Cùng tạo nên sản phẩm", "tiếp theo."], heroGreeting: "Xin chào, mình là", languageLabel: "Chuyển sang tiếng Anh" },
-};
+export const locales = ["en", "vi"] as const;
+
+export const isLocale = (locale: string): locale is Locale =>
+  locales.includes(locale as Locale);
