@@ -1,0 +1,14 @@
+{
+  "Metadata": { "title": "Lê Nguyễn Xuân Lộc | Software Engineering Intern", "description": "Personal portfolio of Lê Nguyễn Xuân Lộc." },
+  "Landing": {
+    "navigation": { "about": "About", "skills": "Skills", "projects": "Projects", "experience": "Experience", "contact": "Contact" },
+    "sectionLabels": { "about": "ABOUT ME", "skills": "TECHNICAL TOOLKIT", "projects": "SELECTED WORK", "experience": "EXPERIENCE" },
+    "details": { "education": "Education", "graduation": "Expected graduation", "location": "Location", "focus": "Focus" },
+    "aboutTitle": "Building clear and useful digital experiences.",
+    "skillsTitle": "Skills and tools", "projectsTitle": "Featured projects", "experienceTitle": "Work experience", "viewProjects": "View projects", "getInTouch": "Get in touch", "email": "Send an email", "peep": "View PEEP report", "backToTop": "Back to top",
+    "contactDescription": "I'm always open to a conversation about products, collaboration opportunities, or a new idea.",
+    "contactTitle": { "first": "Let's create the", "emphasis": "next product." },
+    "heroGreeting": "Hi, I'm", "languageLabel": "Switch to Vietnamese", "reportLabel": "PEEP Report", "mobileMenuLabel": "Open menu", "contactLabel": "LET'S CONNECT",
+    "portrait": { "building": "BUILDING", "software": "USEFUL SOFTWARE", "role": "SOFTWARE ENGINEERING INTERN" }
+  }
+}
