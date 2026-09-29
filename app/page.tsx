@@ -1,10 +1,6 @@
 "use client";
-
-import { useState } from "react";
-import portfolio from "../data/portfolio.json";
-import type { PortfolioData } from "../data/portfolio";
-import { projects } from "../data/projects";
-import projectStyles from "./projects.module.css";
+export { LandingPage as default } from "../components/landing/LandingPage";
+/* Archived pre-refactor implementation.
 
 const peepReport = "https://loclnx.github.io/LAZTAR-PEEP-2026-LeNguyenXuanLoc/";
 const vietnameseProjectDescriptions = [
@@ -13,7 +9,7 @@ const vietnameseProjectDescriptions = [
   "Ứng dụng học tiếng Nhật đa nền tảng với từ vựng, flashcard, quiz, luyện nghe, nói, viết, bookmark, lịch sử học và theo dõi tiến độ - kể cả khi offline. Mình phát triển các luồng Flutter, tích hợp RESTful API qua Dio và Riverpod, xác thực và refresh token, ghi/phát âm thanh, SQLite cùng đồng bộ dữ liệu; đồng thời xây dựng dịch vụ Node.js cho nội dung học, đánh giá nói/viết bằng Gemini và lưu media trên Cloudflare R2.",
 ];
 
-export default function Home() {
+function LegacyHome() {
   const [locale, setLocale] = useState<"en" | "vi">("en");
   const { profile, skills, experience, socialLinks } = portfolio as PortfolioData;
   const englishProfile = {
@@ -48,3 +44,4 @@ export default function Home() {
 }
 
 function Heading({index,label,title}:{index:string;label:string;title:string}) { return <div className="heading"><p className="eyebrow">{index} / {label}</p><h2>{title}</h2></div>; }
+*/
